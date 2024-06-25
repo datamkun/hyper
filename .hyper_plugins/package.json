@@ -1,0 +1,22 @@
+{
+  "name": "hyper-plugins",
+  "description": "Auto-generated from `~/.hyper.js`!",
+  "private": true,
+  "version": "0.0.1",
+  "repository": "vercel/hyper",
+  "license": "MIT",
+  "homepage": "https://hyper.is",
+  "dependencies": {
+    "hyperterm-material": "latest",
+    "hyper-dark-scrollbar": "latest",
+    "hyper-highlight-active-pane": "latest",
+    "hyper-opacity": "latest",
+    "hyper-search": "latest",
+    "hypercwd": "latest",
+    "hyperterm-overlay": "latest",
+    "hyperlinks": "latest",
+    "hyper-pane": "latest",
+    "hyper-statusline": "latest",
+    "hyper-tab-icons-plus": "latest"
+  }
+}

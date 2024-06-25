@@ -38,7 +38,47 @@ module.exports = {
         // border color (window, tabs)
         borderColor: "#333",
         // custom CSS to embed in the main window
-        css: "",
+        // css: "",
+        css: `
+            // 吹き出しを揺らすアニメーション (https://q-az.net/buruburu-hurueru-css/)
+            @keyframes shakeshake {
+                0% {transform: translate(0px, 0px) rotateZ(0deg)}
+                25% {transform: translate(2px, 2px) rotateZ(1deg)}
+                50% {transform: translate(0px, 2px) rotateZ(0deg)}
+                75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+                100% {transform: translate(0px, 0px) rotateZ(0deg)}
+            }
+            .shake {
+                animation: shakeshake .1s  infinite;
+            }
+            // 吹き出し (https://saruwakakun.com/html-css/reference/speech-bubble)
+            .balloon {
+                position: relative;
+                display: inline-block;
+                margin: 1.5em 0;
+                padding: 7px 10px;
+                min-width: 120%;
+                max-width: 100%;
+                color: #555;
+                font-size: 14px;
+                background: #e0edff;
+                border-radius: 15px;
+            }
+            .balloon:before{
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -15px;
+                border: 15px solid transparent;
+                border-top: 15px solid #e0edff;
+            }
+            .balloon p {
+                margin: 0;
+                padding: 0;
+                font-family: 'arial unicode ms';
+            }
+        `,
         // custom CSS to embed in the terminal window
         termCSS: "",
         // set custom startup directory (must be an absolute path)
@@ -141,7 +181,7 @@ module.exports = {
             position: "bottom",
             primaryDisplay: false,
             resizable: true,
-            size: 0.4,
+            size: 0.5,
             tray: true,
             startAlone: true,
             startup: true,
@@ -170,7 +210,7 @@ module.exports = {
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
-    localPlugins: [],
+    localPlugins: ["mascot"],
     keymaps: {
         // Example
         // 'window:devtools': 'cmd+alt+o',
